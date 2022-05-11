@@ -1,0 +1,12 @@
+.mainContainer {
+    width: 20%;
+    background: #BDBDBD;
+    min-height: 100vh;
+}
+
+.contentContainer {
+    margin-top: 35px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}

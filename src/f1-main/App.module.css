@@ -1,0 +1,20 @@
+.mainContainer {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+}
+.contentContainer{
+    width: 80%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 35px;
+}
+.routeContainer{
+    margin-top: 30px;
+    padding: 5px 10px 5px 10px;
+    width: 80%;
+    background: #F3F3F3;
+    border-radius: 8px;
+}
