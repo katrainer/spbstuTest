@@ -10,8 +10,7 @@ export const store = createStore(rootReducer)
 
 //type
 
-//Типизация санок
-
+//Свой useSelector
 export const useAppSelector: TypedUseSelectorHook<AppRootStateType> = useSelector
 
 //Типизация стора

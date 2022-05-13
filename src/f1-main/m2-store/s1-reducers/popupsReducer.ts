@@ -1,12 +1,13 @@
 import {v1} from 'uuid'
 
 enum EnumPopupsReducerActionType {
-    removePopup = 'POPUPS/REMOVE-POPUP'
+    removePopup = 'POPUPS/REMOVE-POPUP',
+    addPopup = 'POPUPS/ADD-POPUP',
 }
 
 const initialState = [
     {
-        id: v1(), location: [51.5085, -0.12574], name: 'London', description: 'Capital of Great Britain',
+        id: v1(), location: [51.50, -0.12], name: 'London', description: 'Capital of Great Britain',
         data: '11.05.2022', time: '20:46:25'
     },
     {
@@ -23,6 +24,8 @@ export const popupsReducer = (state: InitialStateType = initialState, action: Po
     switch (action.type) {
         case EnumPopupsReducerActionType.removePopup:
             return state.filter(p => p.id !== action.payload.id)
+        case EnumPopupsReducerActionType.addPopup:
+            return [{...action.payload.popup}, ...state]
         default:
             return state
     }
@@ -33,13 +36,20 @@ export const removePopupAC = (id: string) => {
     return {
         type: EnumPopupsReducerActionType.removePopup,
         payload: {id}
-    }
+    } as const
+}
+export const addPopupAC = (popup: PopupType) => {
+    return {
+        type: EnumPopupsReducerActionType.addPopup,
+        payload: {popup}
+    } as const
 }
 
 //type
 type InitialStateType = typeof initialState
 export type PopupsReducerActionType =
-    |ReturnType<typeof removePopupAC>
+    | ReturnType<typeof removePopupAC>
+    | ReturnType<typeof addPopupAC>
 
 export type PopupType = {
     id: string

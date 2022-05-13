@@ -1,0 +1,30 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.contentContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.contentContainer >div{
+    margin: 10px 30px;
+}
+.contentContainer div span{
+    margin-right: 5px;
+}
